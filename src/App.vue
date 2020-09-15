@@ -1,59 +1,63 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/reports">Reports</router-link>
+    <div class="nav_container">
+      <div class="home_link">
+        <router-link to="/">Home</router-link>
+      </div>
+      <div class="report_link">
+        <router-link to="/reports">Reports</router-link>
+      </div>
     </div>
 
-    <router-view/>
-    <div id="footer">
-      <router-link to="/">Apa</router-link> |
-      <router-link to="/reports">Monkey</router-link>
-    </div>
+    <transition name="router-anim" enter-active-class="animated fadeInDown">
+      <router-view/>
+    </transition>
+
   </div>
 </template>
 
-<script>
-export default {
-  name: 'app',
-  components: {
-
-  }
-}
-</script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+<style scoped>
+.nav_container {
+  border: solid rgb(167, 98, 41);
+  position: absolute;
   text-align: center;
-  color: #2c3e50;
+  background-color: rgb(255, 248, 237);
+  width: 25%;
+  height: 2000px;
 }
 
-#nav {
-  padding: 30px;
+.home_link a {
+  text-decoration: none;
+  color: #000;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.report_link a {
+  text-decoration: none;
+  color: #000;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.home_link:hover {
+  text-decoration: underline;
 }
 
-#footer {
-  padding: 30px;
+.report_link:hover {
+  text-decoration: underline;
 }
 
-#footer a {
-  font-weight: bold;
-  color: #2c3e50;
+.home_link {
+  margin-top: 20%;
+  margin-bottom: 1em;
+  font-size: 50px;
 }
 
-#footer a.router-link-exact-active {
-  color: #42b983;
+.report_link {
+  font-size: 50px;
+  text-decoration: none;
 }
+
+.nav_links:hover {
+  color: rgb(255, 255, 255);
+}
+@import "https://cdn.jsdelivr.net/npm/animate.css@3.5.1";
+
 </style>
