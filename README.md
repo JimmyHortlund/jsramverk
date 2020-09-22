@@ -1,4 +1,5 @@
 # jsramverk-me-app
+VUE
 
 ## Project setup
 ```
@@ -19,7 +20,6 @@ vue --version
 ```
 npm update -g @vue/cli
 ```
-
 
 ## Create new Vue project in terminal
 ```
